@@ -3,11 +3,15 @@ import setuptools
 
 setuptools.setup(
         name = 'p5250',
-        packages = ['p5250'],
         version = '0.1.0',
         description = 'Python library to communicate with IBM i hosts, based on the 5250 protocol. For example AS400.',
         author = 'Simon Faltum',
         url = 'https://github.com/simonfaltum/p5250',
+        packages=setuptools.find_packages(),
+        python_requires='>=3.6',
+        install_requires=[
+            'p3270>=0.1.3'
+        ],
         long_description = '''
     A Python library that provides an interface to communicate with IBM hosts: send commands and text, receive output (screens). 
     The library is built on a 3270 emulator, but adapted for the 5250 protocol used by AS400 and IBM i.
