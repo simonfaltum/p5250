@@ -143,6 +143,9 @@ class P5250Client():
     def waitForField(self):
         return self.p3270.waitForField()
 
+    def waitForStringAt(self, row, col, string):
+        return self.p3270.waitForStringAt(row, col, string)
+    
     def rollUp(self):
         return self.p3270.sendPF(8)
 
