@@ -143,6 +143,9 @@ class P5250Client():
     def waitForField(self):
         return self.p3270.waitForField()
 
+    def waitForStringAt(self, row, col, string):
+        return self.p3270.waitForStringAt(row, col, string)
+    
     def rollUp(self):
         return self.p3270.sendPF(8)
 
@@ -158,6 +161,6 @@ class P5250Client():
             return self.p3270.sendPF(n)
         elif 12 < n < 25:
             self.p3270.sendPA(2)
-            return self.p3270.sendPF(n)
+            return self.p3270.sendPF(n-12)
         else:
             raise Exception("Only F1 to F24 is allowed")
