@@ -161,6 +161,6 @@ class P5250Client():
             return self.p3270.sendPF(n)
         elif 12 < n < 25:
             self.p3270.sendPA(2)
-            return self.p3270.sendPF(n)
+            return self.p3270.sendPF(n-12)
         else:
             raise Exception("Only F1 to F24 is allowed")
